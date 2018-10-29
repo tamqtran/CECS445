@@ -4,7 +4,8 @@ from django.db import models
 class AgeCategory(models.Model):
 	age = models.CharField(max_length=50)
 	category = models.CharField(max_length=50)
-	
+	def __str__(self):
+		return self.age
 class Question(models.Model):
 	age_and_category =  models.ForeignKey(AgeCategory, on_delete=models.CASCADE)
 	QID = models.CharField(max_length=50)

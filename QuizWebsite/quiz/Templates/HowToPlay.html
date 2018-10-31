@@ -16,9 +16,11 @@
             Step 5: See Results <br />
             Step 6: Click "Play Again" or "See Scoreboard" <br />
 
-            <button type="button" >Play Quiz </button>
-        </p>
+			<form method="get" action="{% url 'quiz:AgeSelection' %}">
+				<button type="submit">Play Quiz </button>
+			</form>
+		</p>
 	</body>
     {% endblock %}
-
 </html>
+

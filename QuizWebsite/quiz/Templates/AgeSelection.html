@@ -10,13 +10,28 @@
 		<h1> <b> Age Selection</b> </h1>
 
         <p>
-            <button type="button" >Elementary </button>
-            <button type="button" >Middle </button>
-            <button type="button" >High </button>
-            <button type="button" >Adult </button>
-
+			<form method="get" action="{% url 'quiz:ElementaryCategories' %}">
+				<button type="submit" >Elementary</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:MiddleCategories' %}">
+				<button type="submit" >Middle</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:HighCategories' %}">
+				<button type="submit" >High</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:AdultCategories' %}">
+				<button type="submit" >Adult</button>
+			</form>
         </p>
 	</body>
     {% endblock %}
 
 </html>
+
+
+<form method="get" action="{% url 'quiz:AgeSelection' %}">
+				<button type="submit">Play Quiz </button>
+			</form>

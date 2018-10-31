@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+<html>
+	{% block head %}
+        <title>Question</title>
+    {% endblock %}
+
+
+	{% block body %}
+  <body>
+		<h1> <b>Question</b> </h1>
+
+        <p>
+            <form method="get" action="{% url 'quiz:QuizGame' %}">
+				<button type="submit" >Next Question</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:Result' %}">
+				<button type="submit" >Result</button>
+			</form>
+        </p>
+	</body>
+    {% endblock %}
+
+</html>

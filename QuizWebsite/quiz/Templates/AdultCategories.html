@@ -10,11 +10,21 @@
 		<h1> <b>Adult Category Selection</b> </h1>
 
         <p>
-            <button type="button" >Math </button>
-            <button type="button" >History </button>
-            <button type="button" >Science </button>
-            <button type="button" >English </button>
-
+			<form method="get" action="{% url 'quiz:QuizGame' %}">
+				<button type="submit" >Math</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:QuizGame' %}">
+				<button type="submit" >History</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:QuizGame' %}">
+				<button type="submit" >Science</button>
+			</form>
+			
+			<form method="get" action="{% url 'quiz:QuizGame' %}">
+				<button type="submit" >English</button>
+			</form>
         </p>
 	</body>
     {% endblock %}

@@ -10,4 +10,25 @@ def HowToPlay(request):
 
 def About(request):
     return render(request, 'About.html')
+	
+def AgeSelection(request):
+    return render(request, 'AgeSelection.html')
+
+def ElementaryCategories(request):
+    return render(request, 'ElementaryCategories.html')
+	
+def MiddleCategories(request):
+    return render(request, 'MiddleCategories.html')
+	
+def HighCategories(request):
+    return render(request, 'HighCategories.html')
+	
+def AdultCategories(request):
+    return render(request, 'AdultCategories.html')
+	
+def QuizGame(request):
+    return render(request, 'QuizGame.html')
+	
+def Result(request):
+    return render(request, 'Result.html')
 # Create your views here.

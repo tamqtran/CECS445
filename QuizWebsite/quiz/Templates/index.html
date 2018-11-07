@@ -8,6 +8,10 @@
 	{% block body %}
   <body>
 		<h1> <b> Home</b> </h1>
+
+            <form method="get" action="{% url 'quiz:AgeSelection' %}">
+				<button type="submit">Play Quiz </button>
+			</form>
 	</body>
     {% endblock %}
 

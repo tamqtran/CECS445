@@ -10,13 +10,22 @@
 		<h1> <b>Question</b> </h1>
 
         <p>
-            <form method="get" action="{% url 'quiz:QuizGame' %}">
+					{% if latest_question_list %}
+		    <ul>
+		    {% for Question in latest_question_list %}
+		        <li><a href="/quiz/QuizGame/{{ Question.QID }}/">{{ Question.problem }}</a></li>
+		    {% endfor %}
+		    </ul>
+				{% else %}
+				    <p>No polls are available.</p>
+				{% endif %}
+          <!--  <form method="get" action="{% url 'quiz:QuizGame' %}">
 				<button type="submit" >Next Question</button>
 			</form>
-			
+
 			<form method="get" action="{% url 'quiz:Result' %}">
 				<button type="submit" >Result</button>
-			</form>
+			</form>-->
         </p>
 	</body>
     {% endblock %}

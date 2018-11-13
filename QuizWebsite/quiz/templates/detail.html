@@ -1,0 +1,18 @@
+<h1>{{Question.problem}}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url '/quiz/guess/' Question.QID %}" method="post">
+{% csrf_token %}
+
+<input type="radio" name="choice" id="choice1" value="{{ Question.choice1 }}">
+<label for="choice1">{{ Question.choice1 }}</label><br>
+<input type="radio" name="choice" id="choice2" value="{{ Question.choice2 }}">
+<label for="choice2">{{ Question.choice2 }}</label><br>
+<input type="radio" name="choice" id="choice3" value="{{ Question.choice3 }}">
+<label for="choice3">{{ Question.choice3 }}</label><br>
+<input type="radio" name="choice" id="choice4" value="{{ Question.answer }}">
+<label for="choice4">{{ Question.answer }}</label><br>
+
+<input type="submit" value="guess">
+</form>

@@ -12,5 +12,9 @@ urlpatterns = [
 	path('HighCategories/', views.HighCategories, name = 'HighCategories'),
 	path('AdultCategories/', views.AdultCategories, name = 'AdultCategories'),
 	path('QuizGame/', views.QuizGame, name = 'QuizGame'),
+    path('QuizGame/<int:Question_QID>/', views.detail, name='detail'),
+    #path('<int:Question_QID>/results/', views.results, name='results'),
+    # ex: /polls/5/vote/
+    path('<int:Question_QID>/guess/', views.guess, name='guess'),
 	path('Result/', views.Result, name = 'Result'),
 ]

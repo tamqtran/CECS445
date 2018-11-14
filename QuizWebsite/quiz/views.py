@@ -31,10 +31,15 @@ def AdultCategories(request):
     return render(request, 'AdultCategories.html')
 
 def QuizGame(request):
-    latest_question_list = Question.objects.order_by('-QID')[:1]
+    #qid = request.POST.get("name")
+    latest_question_list = Question.objects.filter(age_and_category = '1')
+    choice1 = latest_question_list.Question.choice2
+    choice2 = latest_question_list.Question.choice1
     template = loader.get_template('QuizGame.html')
     context = {
         'latest_question_list': latest_question_list,
+        'choice1' : choice1,
+        'choice2' : choice1,
     }
     return HttpResponse(template.render(context, request))
     #return render(request, 'QuizGame.html')

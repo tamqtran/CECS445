@@ -10,19 +10,19 @@
 		<h1> <b>Elementary Category Selection</b> </h1>
 
         <p>
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
+			<form method="get" name='1' action="{% url 'quiz:QuizGame' %}"value ='1' >
 				<button type="submit" >Math</button>
 			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
+
+			<form method="get" name='2' action="{% url 'quiz:QuizGame' %}"value ='2'>
 				<button type="submit" >History</button>
 			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
+
+			<form method="get" name='3' action="{% url 'quiz:QuizGame' %}"value ='3'>
 				<button type="submit" >Science</button>
 			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
+
+			<form method="get" name='4' action="{% url 'quiz:QuizGame' %}"value ='4'>
 				<button type="submit" >English</button>
 			</form>
         </p>

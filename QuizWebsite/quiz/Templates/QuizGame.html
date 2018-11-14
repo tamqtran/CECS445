@@ -17,8 +17,8 @@
 						{% csrf_token %}
 						<input type="radio" name="choice" id="choice1" value="{{ Question.choice1 }}">
 						<label for="choice1">{{ Question.choice1 }}</label><br>
-						<input type="radio" name="choice" id="choice2" value="{{ Question.choice2 }}">
-						<label for="choice2">{{ Question.choice2 }}</label><br>
+						<input type="radio" name="choice" id="choice2" value="{{ choice2 }}">
+						<label for="choice2">{{Question.choice2 }}</label><br>
 						<input type="radio" name="choice" id="choice3" value="{{ Question.choice3 }}">
 						<label for="choice3">{{ Question.choice3 }}</label><br>
 						<input type="radio" name="choice" id="choice4" value="{{ Question.answer }}">

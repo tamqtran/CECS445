@@ -54,11 +54,16 @@
                         Done
                     </button>
 			    </form>
-
+					<footer>
+					 <p id="progress"></p>
+			 		</footer>
         </p>
         <script>
             // change queryset to JSON
             var x = JSON.parse("{{ question_json| safe | escapejs}}");
+
+						//Current Question
+						max = 10;
 
             // counter for which question
             var count = 0;
@@ -70,6 +75,9 @@
             document.getElementById("choice3").innerHTML = x[count].fields.choice3;
             document.getElementById("answer").innerHTML = x[count].fields.answer;
 
+						var element = document.getElementById("progress");
+						var current = count + 1;
+						element.innerHTML = current + " / " + max;
 
             // reveal wrong and reveal next button, if last question done button appears
             function choice1() {
@@ -125,7 +133,12 @@
                  document.getElementById("choice3").innerHTML = x[count].fields.choice3;
                  document.getElementById("answer").innerHTML = x[count].fields.answer;
                  document.getElementById("next").style.display = "none";
+								 var element = document.getElementById("progress");
+								 var current = count + 1;
+		 						 element.innerHTML = current + " / " + max;
             }
+
+
         </script>
 
 	</body>

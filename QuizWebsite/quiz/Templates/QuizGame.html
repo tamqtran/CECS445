@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+
+
 <html>
 	{% block head %}
         <title>Question</title>
@@ -8,37 +10,126 @@
 	{% block body %}
   <body>
 		<h1> <b>Question</b> </h1>
-
         <p>
-					{% if latest_question_list %}
-		    <ul>
-		    {% for Question in latest_question_list %}
-		        <li>{{ Question.problem }}</li>
-						{% csrf_token %}
-						<input type="radio" name="choice" id="choice1" value="{{ Question.choice1 }}">
-						<label for="choice1">{{ Question.choice1 }}</label><br>
-						<input type="radio" name="choice" id="choice2" value="{{ choice2 }}">
-						<label for="choice2">{{Question.choice2 }}</label><br>
-						<input type="radio" name="choice" id="choice3" value="{{ Question.choice3 }}">
-						<label for="choice3">{{ Question.choice3 }}</label><br>
-						<input type="radio" name="choice" id="choice4" value="{{ Question.answer }}">
-						<label for="choice4">{{ Question.answer }}</label><br>
+                <!--Show Problem-->
+                <button id = "problem">
 
-		    {% endfor %}
-		    </ul>
-				{% else %}
-				    <p>No polls are available.</p>
-				{% endif %}
-				<input type="submit" value="guess">
-          <!--  <form method="get" action="{% url 'quiz:QuizGame' %}">
-				<button type="submit" >Next Question</button>
-			</form>
+                </button>
 
-			<form method="get" action="{% url 'quiz:Result' %}">
-				<button type="submit" >Result</button>
-			</form>-->
+                <!--Show choice 1-->
+		        <button onclick ="choice1()"
+                        id = "choice1">
+                </button>
+
+                <!--Show choice 2-->
+                <button onclick ="choice2()"
+                        id = "choice2">
+                </button>
+
+                <!--Show choice 3-->
+                <button onclick ="choice3()"
+                        id = "choice3">
+                </button>
+
+                <!--Show answer-->
+                <button onclick ="answer()"
+                        id = "answer">
+                </button>
+
+                <!--Next button hidden until an choice is chosen, updates html for next question-->
+                <button style="display:none"
+                        onclick ="next()"
+                        id = "next">
+                    Next
+                </button>
+
+                <!--Done button hidden until last question choice is chosen, jumps to Results page-->
+                <form
+                      method="get"
+                      action="{% url 'quiz:Result' %}"
+                      >
+				    <button type="submit"
+                            id = "done"
+                            style="display:none">
+                        Done
+                    </button>
+			    </form>
+
         </p>
+        <script>
+            // change queryset to JSON
+            var x = JSON.parse("{{ question_json| safe | escapejs}}");
+
+            // counter for which question
+            var count = 0;
+
+            // set first question
+            document.getElementById("problem").innerHTML = x[count].fields.problem;
+            document.getElementById("choice1").innerHTML = x[count].fields.choice1;
+            document.getElementById("choice2").innerHTML = x[count].fields.choice2;
+            document.getElementById("choice3").innerHTML = x[count].fields.choice3;
+            document.getElementById("answer").innerHTML = x[count].fields.answer;
+
+
+            // reveal wrong and reveal next button, if last question done button appears
+            function choice1() {
+                document.getElementById("choice1").innerHTML = "No";
+                if(count >= 9)
+                     document.getElementById("done").style.display = "block";
+                else
+                    revealNext();
+            }
+
+            // reveal wrong and reveal next button, if last question done button appears
+            function choice2() {
+                document.getElementById("choice2").innerHTML = "No";
+                if(count >= 9)
+                     document.getElementById("done").style.display = "block";
+                else
+                    revealNext();
+            }
+
+            // reveal wrong and reveal next button, if last question done button appears
+            function choice3() {
+                document.getElementById("choice3").innerHTML = "No";
+                if(count >= 9)
+                     document.getElementById("done").style.display = "block";
+                else
+                    revealNext();
+            }
+
+            // reveal answer and reveal next button, if last question done button appears
+            function answer() {
+                document.getElementById("answer").innerHTML = "Yes";
+                if(count >= 9)
+                     document.getElementById("done").style.display = "block";
+                else
+                    revealNext();
+            }
+
+            // function to reveal next button, if last question done button appears
+            function revealNext(){
+                var x = document.getElementById("next");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+            }
+
+            // go to next question, change html for next question, hide next button
+            function next(){
+                 count = count + 1;
+
+                 document.getElementById("problem").innerHTML = x[count].fields.problem;
+                 document.getElementById("choice1").innerHTML = x[count].fields.choice1;
+                 document.getElementById("choice2").innerHTML = x[count].fields.choice2;
+                 document.getElementById("choice3").innerHTML = x[count].fields.choice3;
+                 document.getElementById("answer").innerHTML = x[count].fields.answer;
+                 document.getElementById("next").style.display = "none";
+            }
+        </script>
+
 	</body>
     {% endblock %}
+
 
 </html>

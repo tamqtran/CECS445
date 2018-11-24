@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.core import serializers
 
 def index(request):
     return render(request, 'index.html')
@@ -33,17 +34,18 @@ def AdultCategories(request):
 def QuizGame(request):
     #qid = request.POST.get("name")
     latest_question_list = Question.objects.filter(age_and_category = '1').random(10)
-    for x in latest_question_list:
-        k = x.choice1
-        w = x.choice2
-        x.choice2 = k
-        x.choice1 = w
+    question_json = serializers.serialize('json', latest_question_list)
+    #for x in latest_question_list:
+    #    k = x.choice1
+    #   w = x.choice2
+    #    x.choice2 = k
+    #    x.choice1 = w
     ##choice2 =  latest_question_list.values('choice1')
     #QID = latest_question_list.filter(QID = 1)
     #question = QID.problem
     template = loader.get_template('QuizGame.html')
     context = {
-        'latest_question_list': latest_question_list,
+        'question_json': question_json,
         #'choice2' : choice2,
     }
     return HttpResponse(template.render(context, request))

@@ -10,21 +10,25 @@
 		<h1> <b>High School Category Selection</b> </h1>
 
         <p>
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
-				<button type="submit" >Math</button>
-			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
-				<button type="submit" >History</button>
-			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
-				<button type="submit" >Science</button>
-			</form>
-			
-			<form method="get" action="{% url 'quiz:QuizGame' %}">
-				<button type="submit" >English</button>
-			</form>
+					<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+					<button type="submit"  name = "choice"  value ='12' >
+					 <label for="choice1">Math</label>
+					</form>
+
+				 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+				 <button type="submit"  name = "choice"  value ='9' >
+				 <label for="choice1">History</label>
+				 </form>
+
+				 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+				<button type="submit"  name = "choice"  value ='10' >
+				<label for="choice1">Science</label>
+				</form>
+
+				<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+				<button type="submit"  name = "choice"  value ='11' >
+				<label for="choice1">English</label>
+				</form>
         </p>
 	</body>
     {% endblock %}

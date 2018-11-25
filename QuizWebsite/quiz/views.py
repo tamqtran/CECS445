@@ -33,7 +33,10 @@ def AdultCategories(request):
 
 def QuizGame(request):
     #qid = request.POST.get("name")
-    latest_question_list = Question.objects.filter(age_and_category = '1').random(10)
+    x = request.POST["choice"]
+
+
+    latest_question_list = Question.objects.filter(age_and_category = x).random(10)
     question_json = serializers.serialize('json', latest_question_list)
     #for x in latest_question_list:
     #    k = x.choice1

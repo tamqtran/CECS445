@@ -9,22 +9,29 @@
   <body>
 		<h1> <b>Elementary Category Selection</b> </h1>
 
+
+
         <p>
-			<form method="get" name='1' action="{% url 'quiz:QuizGame' %}"value ='1' >
-				<button type="submit" >Math</button>
-			</form>
 
-			<form method="get" name='2' action="{% url 'quiz:QuizGame' %}"value ='2'>
-				<button type="submit" >History</button>
-			</form>
+			<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+			<button type="submit"  name = "choice"  value ='1' >
+			 <label for="choice1">Math</label>
+		  </form>
 
-			<form method="get" name='3' action="{% url 'quiz:QuizGame' %}"value ='3'>
-				<button type="submit" >Science</button>
-			</form>
+		 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+		 <button type="submit"  name = "choice"  value ='3' >
+		 <label for="choice1">History</label>
+		 </form>
 
-			<form method="get" name='4' action="{% url 'quiz:QuizGame' %}"value ='4'>
-				<button type="submit" >English</button>
-			</form>
+		 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+ 		<button type="submit"  name = "choice"  value ='2' >
+ 		<label for="choice1">Science</label>
+ 		</form>
+
+		<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+		<button type="submit"  name = "choice"  value ='4' >
+		<label for="choice1">English</label>
+		</form>
         </p>
 	</body>
     {% endblock %}

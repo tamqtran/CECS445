@@ -44,7 +44,8 @@
                 <!--Next button hidden until an choice is chosen, updates html for next question-->
                 <button style="display:none"
                         onclick ="next()"
-                        id = "next">
+                        id = "next"
+                        class = "NextDone">
                     Next
                 </button>
 
@@ -55,7 +56,8 @@
                       >
 				    <button type="submit"
                             id = "done"
-                            style="display:none">
+                            style="display:none"
+                            class = "NextDone">
                         Done
                     </button>
 			    </form>
@@ -223,6 +225,15 @@
                 position: fixed;
                 top: 65%;
                 left: 57.5%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+            .NextDone{
+                position: fixed;
+                top: 85%;
+                left: 75%;
                 width: 20%;
                 height: 10%;
                 text-align: center;

@@ -12,28 +12,33 @@
 		<h1> <b>Question</b> </h1>
         <p>
                 <!--Show Problem-->
-                <button id = "problem">
+                <button id = "problem"
+                        class = "questionPos">
 
                 </button>
 
                 <!--Show choice 1-->
 		        <button onclick ="choice1()"
-                        id = "choice1">
+                        id = "choice1"
+                        class = "choicePos1">
                 </button>
 
                 <!--Show choice 2-->
                 <button onclick ="choice2()"
-                        id = "choice2">
+                        id = "choice2"
+                        class = "choicePos2">
                 </button>
 
                 <!--Show choice 3-->
                 <button onclick ="choice3()"
-                        id = "choice3">
+                        id = "choice3"
+                        class = "choicePos3">
                 </button>
 
                 <!--Show answer-->
                 <button onclick ="answer()"
-                        id = "answer">
+                        id = "answer"
+                        class = "choicePos4">
                 </button>
 
                 <!--Next button hidden until an choice is chosen, updates html for next question-->
@@ -75,9 +80,12 @@
             document.getElementById("choice3").innerHTML = x[count].fields.choice3;
             document.getElementById("answer").innerHTML = x[count].fields.answer;
 
-						var element = document.getElementById("progress");
-						var current = count + 1;
-						element.innerHTML = current + " / " + max;
+            var element = document.getElementById("progress");
+            var current = count + 1;
+            element.innerHTML = current + " / " + max;
+
+            RandomPos();
+
 
             // reveal wrong and reveal next button, if last question done button appears
             function choice1() {
@@ -136,10 +144,91 @@
 								 var element = document.getElementById("progress");
 								 var current = count + 1;
 		 						 element.innerHTML = current + " / " + max;
+                RandomPos();
+            }
+
+            // random position for choices and answers
+            function RandomPos(){
+                var choices = ["choice1", "choice2", "choice3", "answer"];
+
+                // function from https://www.w3schools.com/js/js_array_sort.asp
+                choices.sort(function(a, b){return 0.5 - Math.random()});
+
+                // assigning random positions
+                choices.forEach(assignPos);
+            }
+
+            // assigning position of choice in the ForEach of RandomPos function
+            function assignPos(value, index, array) {
+
+                switch (index) {
+                    case 0:
+                        document.getElementById( value ).className = "choicePos1";
+                        break;
+                    case 1:
+                        document.getElementById( value ).className = "choicePos2";
+                        break;
+                    case 2:
+                        document.getElementById( value ).className = "choicePos3";
+                        break;
+                    case 3:
+                        document.getElementById( value ).className = "choicePos4";
+                        break;
+                    default:
+                        document.getElementById( ""+value ).className = "choicePos4";;
+                }
             }
 
 
         </script>
+
+        <style>
+            .questionPos{
+                position: fixed;
+                top: 35%;
+                left: 40%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+            .choicePos1 {
+                position: fixed;
+                top: 50%;
+                left: 22.5%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+            .choicePos2 {
+                position: fixed;
+                top: 50%;
+                left: 57.5%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+            .choicePos3 {
+                position: fixed;
+                top: 65%;
+                left: 22.5%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+            .choicePos4 {
+                position: fixed;
+                top: 65%;
+                left: 57.5%;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 3px solid #73AD21;
+            }
+        </style>
 
 	</body>
     {% endblock %}

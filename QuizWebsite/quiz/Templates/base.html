@@ -1,4 +1,5 @@
 <html>
+  {% load static %}
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +7,10 @@
         <title>Home</title>
         {% endblock %}
     </head>
+
+
+  <img src= "{% static "QuizWebsite/dog.jpg" %}" width="100" height="100" alt='dog' />
+
     <body>
         <br>
         <div class="container">
@@ -18,7 +23,6 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'quiz:index' %}">Quiz App</a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

@@ -55,7 +55,13 @@ def QuizGame(request):
     #return render(request, 'QuizGame.html')
 
 def Result(request):
-    return render(request, 'Result.html')
+    results = request.POST.get("results", "Something's wrong")
+    template = loader.get_template('Result.html')
+    context = {
+        'results': results
+    }
+    return HttpResponse(template.render(context, request))
+
 #Create your views here.
 
 def detail(request, Question_QID):

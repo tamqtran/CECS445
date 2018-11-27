@@ -51,18 +51,25 @@
 
                 <!--Done button hidden until last question choice is chosen, jumps to Results page-->
                 <form
-                      method="get"
+                      method= "POST"
                       action="{% url 'quiz:Result' %}"
-                      >
+                      >{% csrf_token %}
 				    <button type="submit"
                             id = "done"
                             style="display:none"
-                            class = "NextDone">
+                            class = "NextDone"
+                            name = "results"
+                            value = '0'>
                         Done
                     </button>
 			    </form>
+
 					<footer>
 					 <p id="progress"></p>
+			 		</footer>
+
+                    <footer>
+					 <p id="right"></p>
 			 		</footer>
         </p>
         <script>
@@ -74,6 +81,14 @@
 
             // counter for which question
             var count = 0;
+
+            /// counter for answer that are right
+            var right = 0;
+            document.getElementById("right").innerHTML = "Answers Right: "+ right;
+            document.getElementById("done").value = right;
+
+            // boolean to keep track for first choice for each question
+            var firstPick = true;
 
             // set first question
             document.getElementById("problem").innerHTML = x[count].fields.problem;
@@ -91,38 +106,64 @@
 
             // reveal wrong and reveal next button, if last question done button appears
             function choice1() {
-                document.getElementById("choice1").innerHTML = "No";
-                if(count >= 9)
-                     document.getElementById("done").style.display = "block";
-                else
-                    revealNext();
+                if(firstPick == true) {
+                    document.getElementById("choice1").innerHTML = "No";
+                    if (count >= 9)
+                        document.getElementById("done").style.display = "block";
+                    else
+                        revealNext();
+
+                    // turn firstPickOff off
+                    firstPick = false;
+                }
             }
 
             // reveal wrong and reveal next button, if last question done button appears
             function choice2() {
-                document.getElementById("choice2").innerHTML = "No";
-                if(count >= 9)
-                     document.getElementById("done").style.display = "block";
-                else
-                    revealNext();
+                if(firstPick == true) {
+                    document.getElementById("choice2").innerHTML = "No";
+                    if (count >= 9)
+                        document.getElementById("done").style.display = "block";
+                    else
+                        revealNext();
+
+                    // turn firstPickOff off
+                    firstPick = false;
+                }
             }
 
             // reveal wrong and reveal next button, if last question done button appears
             function choice3() {
-                document.getElementById("choice3").innerHTML = "No";
-                if(count >= 9)
-                     document.getElementById("done").style.display = "block";
-                else
-                    revealNext();
+                if(firstPick == true) {
+                    document.getElementById("choice3").innerHTML = "No";
+                    if (count >= 9)
+                        document.getElementById("done").style.display = "block";
+                    else
+                        revealNext();
+
+                    // turn firstPickOff off
+                    firstPick = false;
+                }
             }
 
             // reveal answer and reveal next button, if last question done button appears
             function answer() {
-                document.getElementById("answer").innerHTML = "Yes";
-                if(count >= 9)
-                     document.getElementById("done").style.display = "block";
-                else
-                    revealNext();
+                if(firstPick == true){
+                    document.getElementById("answer").innerHTML = "Yes";
+                    if(count >= 9)
+                         document.getElementById("done").style.display = "block";
+                    else
+                        revealNext();
+
+                    // increase right answers
+                    right = right + 1;
+                    document.getElementById("right").innerHTML = "Answers Right: "+ right;
+                    document.getElementById("done").value = right;
+
+                    // turn firstPickOff off
+                    firstPick = false;
+                }
+
             }
 
             // function to reveal next button, if last question done button appears
@@ -147,6 +188,9 @@
 								 var current = count + 1;
 		 						 element.innerHTML = current + " / " + max;
                 RandomPos();
+
+                // turn first choice back on
+                firstPick = true;
             }
 
             // random position for choices and answers
@@ -182,6 +226,9 @@
             }
 
 
+            function getRight(){
+                return right;
+            }
         </script>
 
         <style>

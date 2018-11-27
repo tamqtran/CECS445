@@ -8,7 +8,7 @@
 	{% block body %}
   <body>
 		<h1> <b>Result</b> </h1>
-
+        <h2> <b>Results: {{   results  }}</b> </h2>
         <p>
             <form method="get" action="{% url 'quiz:AgeSelection' %}">
 				<button type="submit" >Play Again?</button>

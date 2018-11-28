@@ -9,10 +9,11 @@
 	{% block body %}
   <body>
 
-
-            <form method="get" action="{% url 'quiz:AgeSelection' %}">
-				<button type="submit">Play Quiz </button>
+		<div class="wrapper">
+			<form method="get" action="{% url 'quiz:AgeSelection' %}">
+				<button type="submit" >Play Quiz</button>
 			</form>
+		</div>
 	</body>
 
 	<style>
@@ -23,6 +24,18 @@
 					background-attachment: fixed;
 					background-position: center;
 
+			}
+
+			.wrapper {
+    text-align: center;
+			}
+
+			button {
+				height:100px;
+	     	width:500px;
+    		position: absolute;
+    		top: 50%;
+				left: 35%;
 			}
 	</style>
     {% endblock %}

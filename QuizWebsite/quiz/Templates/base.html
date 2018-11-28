@@ -9,7 +9,7 @@
     </head>
 
 
-  <a href="{% url 'quiz:AgeSelection' %}"><img src= "{% static "QuizWebsite/logo.gif" %}" style='position:absolute; top:0; left:0;' width="175" height="100" alt='dog' /></a>
+  <a href="{% url 'quiz:index' %}"><img src= "{% static "QuizWebsite/logo.gif" %}" style='position:absolute; top:0; left:0;' width="175" height="100" alt='dog' /></a>
 
     <body>
         <br>
@@ -26,9 +26,10 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
                     <li><a href="{% url 'quiz:HowToPlay' %}">How To Play</a></li>
                     <li><a href="{% url 'quiz:About' %}">About</a></li>
-                    <li><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
+
                 </ul>
               </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->

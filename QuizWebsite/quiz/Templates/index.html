@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 <html>
 	{% block head %}
         <title>Home</title>
@@ -7,12 +8,22 @@
 
 	{% block body %}
   <body>
-		<h1> <b> Home</b> </h1>
+
 
             <form method="get" action="{% url 'quiz:AgeSelection' %}">
 				<button type="submit">Play Quiz </button>
 			</form>
 	</body>
-    {% endblock %}
 
+	<style>
+			body{
+					background-image: url('{% static "QuizWebsite/blackboard.jpg"%}');
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-position: center;
+
+			}
+	</style>
+    {% endblock %}
 </html>

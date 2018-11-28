@@ -108,6 +108,7 @@
             function choice1() {
                 if(firstPick == true) {
                     document.getElementById("choice1").innerHTML = "No";
+                    document.getElementById("choice1").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -122,6 +123,7 @@
             function choice2() {
                 if(firstPick == true) {
                     document.getElementById("choice2").innerHTML = "No";
+                    document.getElementById("choice2").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -136,6 +138,7 @@
             function choice3() {
                 if(firstPick == true) {
                     document.getElementById("choice3").innerHTML = "No";
+                    document.getElementById("choice3").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -150,6 +153,7 @@
             function answer() {
                 if(firstPick == true){
                     document.getElementById("answer").innerHTML = "Yes";
+                    document.getElementById("answer").style.backgroundColor = "rgb(50,205,50)";
                     if(count >= 9)
                          document.getElementById("done").style.display = "block";
                     else
@@ -206,6 +210,7 @@
 
             // assigning position of choice in the ForEach of RandomPos function
             function assignPos(value, index, array) {
+                document.getElementById(value).style.backgroundColor = "rgb(211,211,211)";
 
                 switch (index) {
                     case 0:
@@ -240,6 +245,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
             .choicePos1 {
                 position: fixed;
@@ -249,6 +255,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
             .choicePos2 {
                 position: fixed;
@@ -258,6 +265,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
             .choicePos3 {
                 position: fixed;
@@ -267,6 +275,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
             .choicePos4 {
                 position: fixed;
@@ -276,6 +285,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
             .NextDone{
                 position: fixed;
@@ -285,6 +295,7 @@
                 height: 10%;
                 text-align: center;
                 border: 3px solid #73AD21;
+                background-color: rgb(211,211,211);
             }
         </style>
 

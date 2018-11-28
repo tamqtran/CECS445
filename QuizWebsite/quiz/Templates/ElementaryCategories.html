@@ -14,25 +14,50 @@
         <p>
 
 			<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-			<button type="submit"  name = "choice"  value ='1' >
+			<button type="submit"  name = "choice"  value ='1' id = "math">
 			 <label for="choice1">Math</label>
 		  </form>
 
 		 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-		 <button type="submit"  name = "choice"  value ='3' >
+		 <button type="submit"  name = "choice"  value ='3' id = "history">
 		 <label for="choice1">History</label>
 		 </form>
 
 		 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
- 		<button type="submit"  name = "choice"  value ='2' >
+ 		<button type="submit"  name = "choice"  value ='2' id = "science">
  		<label for="choice1">Science</label>
  		</form>
 
 		<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-		<button type="submit"  name = "choice"  value ='4' >
+		<button type="submit"  name = "choice"  value ='4' id = "english">
 		<label for="choice1">English</label>
 		</form>
         </p>
+
+
+  		<style>
+			#math{
+				position:absolute;
+				bottom:40%;
+				left:30%;
+			}
+			#history{
+				position:absolute;
+				bottom:40%;
+				left:40%;
+			}
+			#science{
+				position:absolute;
+				bottom:40%;
+				left:50%;
+			}
+			#english{
+				position:absolute;
+				bottom:40%;
+				left:60%;
+				height: 10%;
+			}
+		</style>
 	</body>
     {% endblock %}
 

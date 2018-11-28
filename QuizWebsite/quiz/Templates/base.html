@@ -26,9 +26,9 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
-                    <li><a href="{% url 'quiz:HowToPlay' %}">How To Play</a></li>
-                    <li><a href="{% url 'quiz:About' %}">About</a></li>
+                    <li class="nav-item"><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
+                    <li class="nav-item"><a href="{% url 'quiz:HowToPlay' %}">How To Play</a></li>
+                    <li class="nav-item"><a href="{% url 'quiz:About' %}">About</a></li>
 
                 </ul>
               </div><!--/.nav-collapse -->
@@ -40,6 +40,13 @@
         {% endblock %}
     </body>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <style>
+  			.nav-item{
+        }
+        .nav-item:hover
+        {
+          color: black;
+        }
+  	</style>
 
 </html>

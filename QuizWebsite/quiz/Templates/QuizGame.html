@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 <html>
 	{% block head %}
@@ -107,6 +107,7 @@
             // reveal wrong and reveal next button, if last question done button appears
             function choice1() {
                 if(firstPick == true) {
+                    document.getElementById("wrongSound").play();
                     document.getElementById("choice1").innerHTML = "No";
                     document.getElementById("choice1").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
@@ -122,6 +123,7 @@
             // reveal wrong and reveal next button, if last question done button appears
             function choice2() {
                 if(firstPick == true) {
+                    document.getElementById("wrongSound").play();
                     document.getElementById("choice2").innerHTML = "No";
                     document.getElementById("choice2").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
@@ -137,6 +139,7 @@
             // reveal wrong and reveal next button, if last question done button appears
             function choice3() {
                 if(firstPick == true) {
+                    document.getElementById("wrongSound").play();
                     document.getElementById("choice3").innerHTML = "No";
                     document.getElementById("choice3").style.backgroundColor = "rgb(255,0,0)";
                     if (count >= 9)
@@ -152,6 +155,7 @@
             // reveal answer and reveal next button, if last question done button appears
             function answer() {
                 if(firstPick == true){
+                    document.getElementById("rightSound").play();
                     document.getElementById("answer").innerHTML = "Yes";
                     document.getElementById("answer").style.backgroundColor = "rgb(50,205,50)";
                     if(count >= 9)
@@ -235,6 +239,12 @@
                 return right;
             }
         </script>
+
+        <audio id="wrongSound" src = "{% static "QuizWebsite/Wrong-answer-sound-effect.mp3" %}" preload="auto" >
+        </audio>
+
+        <audio id="rightSound" src = "{% static "QuizWebsite/Quiz-correct-win-victory-sound-effect.mp3" %}" preload="auto" ></audioid>
+        </audio>
 
         <style>
             .questionPos{

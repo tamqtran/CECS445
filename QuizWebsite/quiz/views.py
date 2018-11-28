@@ -55,7 +55,8 @@ def QuizGame(request):
     #return render(request, 'QuizGame.html')
 
 def Result(request):
-    results = request.POST.get("results", "Something's wrong")
+    results = int(request.POST.get("results", "Something's wrong"))
+
     template = loader.get_template('Result.html')
     context = {
         'results': results

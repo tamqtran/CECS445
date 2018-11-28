@@ -1,14 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
+
 <html>
+
 	{% block head %}
         <title>Result</title>
     {% endblock %}
 
 
 	{% block body %}
-  <body>
+     <body>
+
 		<h1> <b>Result</b> </h1>
-        <h2> <b>Results: {{   results  }}</b> </h2>
+        <h2> <b>Results: {{  results  }}</b> </h2>
+
+
+        <p>
+        {% if results >= 7 %}
+            Winner!
+        {% elif results < 7 %}
+            Loser!
+        {% endif %}
         <p>
             <form method="get" action="{% url 'quiz:AgeSelection' %}">
 				<button type="submit" >Play Again?</button>
@@ -21,4 +33,19 @@
 	</body>
     {% endblock %}
 
+        <audio id="winSound" src = "{% static "QuizWebsite/Fanfare-sound.mp3" %}" preload="auto" >
+        </audio>
+
+        <audio id="loseSound" src = "{% static "QuizWebsite/Mission-failed-sound-effect.mp3" %}" preload="auto" >
+        </audio>
+
+    <script>
+        function winSound(){
+               document.getElementById("winSound").play();
+        }
+
+        function loseSound(){
+                document.getElementById("loseSound").play();
+        }
+    </script>
 </html>

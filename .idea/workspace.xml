@@ -46,15 +46,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1157" />
+          <entry key="html" value="1644" />
           <entry key="py" value="6" />
-          <entry key="txt" value="141" />
+          <entry key="txt" value="161" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1157" />
-          <entry key="PLAIN_TEXT" value="141" />
+          <entry key="HTML" value="1644" />
+          <entry key="PLAIN_TEXT" value="161" />
           <entry key="Python" value="6" />
         </counts>
       </usages-collector>
@@ -62,38 +62,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/ElementaryCategories.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/AgeSelection.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+            <state relative-caret-position="170">
+              <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html">
+        <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="152">
+              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -113,8 +95,8 @@
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/AdultCategories.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/manage.py" />
-        <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/index.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/ElementaryCategories.html" />
+        <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/index.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/AgeSelection.html" />
       </list>
     </option>
@@ -290,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543443623408</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Age Selection page">
+      <created>1543605142458</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543605142458</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -306,7 +295,7 @@
     <frame x="-7" y="-7" width="1294" height="694" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2828201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2828201" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -366,7 +355,8 @@
     <MESSAGE value="changed Literature to English" />
     <MESSAGE value="added &quot;Play Quiz&quot; buttons on menu bar and on home page." />
     <MESSAGE value="Elementary button moving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Elementary button moving" />
+    <MESSAGE value="Age Selection page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Age Selection page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/QuizWebsite/QuizWebsite/urls.py">
@@ -462,36 +452,36 @@
     <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/detail.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/ElementaryCategories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-131" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/AgeSelection.html">
+    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        <state relative-caret-position="17">
+          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html">
+    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/ElementaryCategories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="448">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+        <state relative-caret-position="152">
+          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/AgeSelection.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
         </state>
       </provider>
     </entry>

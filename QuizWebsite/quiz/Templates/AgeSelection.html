@@ -7,25 +7,53 @@
 
 	{% block body %}
   <body>
-		<h1> <b> Age Selection</b> </h1>
+		<h1 align="center">  <b> Age Selection</b> </h1>
 
         <p>
 			<form method="get" action="{% url 'quiz:ElementaryCategories' %}">
-				<button type="submit" >Elementary</button>
+				<button type="submit" id = "Elementary" >Elementary</button>
 			</form>
 			
 			<form method="get" action="{% url 'quiz:MiddleCategories' %}">
-				<button type="submit" >Middle</button>
+				<button type="submit" id = "Middle">Middle</button>
 			</form>
 			
 			<form method="get" action="{% url 'quiz:HighCategories' %}">
-				<button type="submit" >High</button>
+				<button type="submit" id = "High" >High</button>
 			</form>
 			
 			<form method="get" action="{% url 'quiz:AdultCategories' %}">
-				<button type="submit" >Adult</button>
+				<button type="submit" id = "Adult">Adult</button>
 			</form>
         </p>
+		<style>
+			.h1{
+				position:absolute;
+				left:50%;
+			}
+			#Elementary{
+  				position:absolute;
+				top:70%;
+				left:30%;
+				width:110;}
+			#Middle{
+  				position:absolute;
+				top:70%;
+				left:40%;
+				width:110;}
+			#High{
+  				position:absolute;
+				top:70%;
+				left:50%;
+				width:110;}
+			#Adult{
+  				position:absolute;
+				top:70%;
+				left:60%;
+				width:110;}
+
+		</style>
+  		}
 	</body>
     {% endblock %}
 

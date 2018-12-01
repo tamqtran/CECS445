@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 <html>
 	{% block head %}
         <title>How to Play</title>
@@ -9,9 +10,9 @@
 	{% block body %}
   <body>
 
-		<h1> <b> How to Play</b> </h1>
+		<h1 align="center" style=color:white> <b> How to Play</b> </h1>
 
-        <p> Step 1: Click "Play Quiz" Button <br />
+        <p align="center" style=color:white> Step 1: Click "Play Quiz" Button <br />
             Step 2: Select your Age Group <br />
             Step 3: Select Subject Category <br />
             Step 4: Answer Questions <br />
@@ -19,9 +20,37 @@
             Step 6: Click "Play Again" or "See Scoreboard" <br />
 
 			<form method="get" action="{% url 'quiz:AgeSelection' %}">
-				<button type="submit">Play Quiz </button>
+				<button type="submit" id="playQuiz" >Play Quiz </button>
 			</form>
 		</p>
 	</body>
+
+    <style>
+		body{
+            background-image: url('{% static "QuizWebsite/blackboard.jpg"%}');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+			}
+        #playQuiz{
+            height:10%;
+            width:30%;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            border-radius: 12px;
+            background-color: #4CAF50;
+            border: 2px solid #4CAF50;
+            color: white;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+			}
+        #playQuiz:hover {
+    		background-color: white; /* Green */
+    		color: #4CAF50;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+	</style>
     {% endblock %}
 </html>

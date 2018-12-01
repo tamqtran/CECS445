@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 <html>
 	{% block head %}
         <title>About Us</title>
@@ -7,19 +8,29 @@
 
 	{% block body %}
         <body>
-		<h1> <b> About Us</b> </h1>
+		<h1 align="center" style=color:white> <b> About Us</b> </h1>
 
-		<p> Purpose: Quiz Game (name still not finalized) strives to provide the best <br />
+		<p align="center"style=color:white> Purpose: Quiz Game (name still not finalized) strives to provide the best <br />
 		questions to challenge player. We want everyone to spend their free time <br />
 		expanding their knowledge and not aimlessly wandering social media. Do <br />
 		not waster your free time! Challenge yourself! Take our quiz! </p>
 
-		<p> Phone Number: (323) 354-2440 </p>
+		<p align="center"style=color:white> Phone Number: (323) 354-2440 </p>
 
-		<p> Address: 1250 Bellflower Blvd, Long Beach, CA 90840 </p>
+		<p align="center"style=color:white> Address: 1250 Bellflower Blvd, Long Beach, CA 90840 </p>
 
-		<p> Email: QuizGame@gmail.com </p>
+		<p align="center"style=color:white> Email: QuizGame@gmail.com </p>
 	</body>
+	<style>
+		body{
+					background-image: url('{% static "QuizWebsite/blackboard.jpg"%}');
+					background-size: 100%;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-position: center;
+
+			}
+	</style>
     {% endblock %}
 
 </html>

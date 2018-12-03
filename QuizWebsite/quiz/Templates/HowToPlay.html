@@ -9,23 +9,34 @@
 
 	{% block body %}
   <body>
+<div id= "about">
+		<font face = "Comic sans MS" size ="4"><h1 align="center" style=color:black> <b> How to Play</b> </h1>
 
-		<h1 align="center" style=color:white> <b> How to Play</b> </h1>
-
-        <p align="center" style=color:white> Step 1: Click "Play Quiz" Button <br />
-            Step 2: Select your Age Group <br />
-            Step 3: Select Subject Category <br />
-            Step 4: Answer Questions <br />
-            Step 5: See Results <br />
-            Step 6: Click "Play Again" or "See Scoreboard" <br />
+        <font face = "Comic sans MS" size ="4"><p align="center" style=color:black> The goal of the quiz is to get as many right answers as you can. <br />
+            The quiz has four levels of difficulties corresponind to a different school group. <br />
+            Each level has its' own categories that will test you about that topic. <br />
+            There will be 4 choices available for each question and you can only pick one. <br />
+            If you answer correctly the choice will light up green and you will recieve one point. <br />
+            If you answer inccorectly then the choice will light up red and you will recieve no points. <br />
+						At the end you will be shown your score and you can decide if you want to play again or go back to the main menu. <br />
 
 			<form method="get" action="{% url 'quiz:AgeSelection' %}">
 				<button type="submit" id="playQuiz" >Play Quiz </button>
 			</form>
 		</p>
+	</div>
 	</body>
 
     <style>
+		#about
+		{
+				height: 550px;
+				width: 740px;
+		    margin: 0 auto;
+		    border-radius: 50px;
+				background-color: #4CAF50;;
+		    border: 2px solid #cbcbcb;
+		}
 		body{
             background-image: url('{% static "QuizWebsite/blackboard.jpg"%}');
             background-size: 100%;
@@ -37,18 +48,18 @@
             height:10%;
             width:30%;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 35%;
             border-radius: 12px;
-            background-color: #4CAF50;
-            border: 2px solid #4CAF50;
-            color: white;
+            background-color: white;
+            border: 2px solid white;
+            color: black;
             -webkit-transition-duration: 0.4s; /* Safari */
             transition-duration: 0.4s;
 			}
         #playQuiz:hover {
-    		background-color: white; /* Green */
-    		color: #4CAF50;
+    		background-color: #4CAF50; /* Green */
+    		color: #black;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
 	</style>

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 <html>
 	{% block head %}
         <title>Adult Categories</title>
@@ -7,29 +8,107 @@
 
 	{% block body %}
   <body>
-		<h1> <b>Adult Category Selection</b> </h1>
+		<h1 align="center" style=color:white> <b>Adult Category Selection</b> </h1>
 
         <p>
-					<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-					<button type="submit"  name = "choice"  value ='13' >
-					 <label for="choice1">Math</label>
-					</form>
+			<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+			<button type="submit"  name = "choice"  value ='13' id = "math">
+			 <label for="choice1">Math</label>
+			<a href="{% url 'quiz:QuizGame' %}"><img src="{% static "QuizWebsite/MathPic.PNG" %} "id = "mathPic" /></a>
+			  </form>
 
-				 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-				 <button type="submit"  name = "choice"  value ='15' >
-				 <label for="choice1">History</label>
-				 </form>
+			 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+			 <button type="submit"  name = "choice"  value ='15' id = "history">
+			 <label for="choice1">History</label>
+			 <a href="{% url 'quiz:QuizGame' %}"><img  src= "{% static "QuizWebsite/HistoryPic.jpg" %} "id = "historyPic" /></a>
+			 </form>
 
-				 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-				<button type="submit"  name = "choice"  value ='14' >
-				<label for="choice1">Science</label>
-				</form>
+			 <form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+			<button type="submit"  name = "choice"  value ='14' id="science">
+			<label for="choice1">Science</label>
+			<a href="{% url 'quiz:QuizGame' %}"><img  src= "{% static "QuizWebsite/SciencePic.jpg" %} "id = "sciencePic" /></a>
+			</form>
 
-				<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
-				<button type="submit"  name = "choice"  value ='16' >
-				<label for="choice1">English</label>
-				</form>
+			<form method="post" action="{% url 'quiz:QuizGame' %}">  {% csrf_token %}
+			<button type="submit"  name = "choice"  value ='16' id="english">
+			<label for="choice1">English</label>
+			<a href="{% url 'quiz:QuizGame' %}"><img  src= "{% static "QuizWebsite/EnglishPic.jpg" %} "id = "englishPic" /></a>
+			</form>
         </p>
+  	<style>
+			#math{
+  				position:absolute;
+				top:70%;
+				left:20%;
+				height:30px;
+				width:180;
+				border-radius: 12px;
+				background-color: #0700F9;
+				border: 2px solid;
+				color:white}
+			#history{
+  				position:absolute;
+				top:70%;
+				left:35%;
+				height:30px;
+				width:180;
+				border-radius: 12px;
+				background-color: #0700F9;
+				border: 2px solid;
+				color:white}
+			#science{
+  				position:absolute;
+				top:70%;
+				left:50%;
+				height:30px;
+				width:180;
+				border-radius: 12px;
+				background-color: #0700F9;
+				border: 2px solid;
+				color:white}
+			#english{
+  				position:absolute;
+				top:70%;
+				left:65%;
+				height:30px;
+				width:180;
+				border-radius: 12px;
+				background-color: #0700F9;
+				border: 2px solid;
+				color:white}
+			#mathPic{
+				position:absolute;
+				border:5px double blue;
+				top:-750%;
+				left:-1%;
+				height:180;
+				width:180;
+			}
+			#historyPic{
+				position:absolute;
+				border:5px double blue;
+				top:-750%;
+				left:-1%;
+				height:180;
+				width:180;
+			}
+			#sciencePic{
+				position:absolute;
+				border:5px double blue;
+				top:-750%;
+				left:-1%;
+				height:180;
+				width:180;
+			}
+			#englishPic {
+				position: absolute;
+				border:5px double blue;
+				top: -750%;
+				left: -1%;
+				height: 180;
+				width: 180;
+			}
+		</style>
 	</body>
     {% endblock %}
 

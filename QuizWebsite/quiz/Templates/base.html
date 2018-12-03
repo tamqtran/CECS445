@@ -14,7 +14,7 @@
     <body>
         <br>
         <div class="container">
-            <nav class="navbar navbar-default">
+            <nav class="navbar">
             <div class="container-fluid">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -26,9 +26,9 @@
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li id = "navbutton" class="nav-item"><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
-                    <li class="nav-item"><a href="{% url 'quiz:HowToPlay' %}">How To Play</a></li>
-                    <li class="nav-item"><a href="{% url 'quiz:About' %}">About</a></li>
+                  <li class="nav-item"><a href="{% url 'quiz:AgeSelection' %}">Play Quiz</a></li>
+                  <li class="nav-item"><a href="{% url 'quiz:HowToPlay' %}">How To Play</a></li>
+                  <li class="nav-item"><a href="{% url 'quiz:About' %}">About</a></li>
 
                 </ul>
               </div><!--/.nav-collapse -->
@@ -51,16 +51,24 @@
     }
     .navbar
     {
-      color:white;
       background-color: #0700F9;
     }
-  	#navbutton
+  	.navbar a
     {
-      color:black;
+      color:white;
+    }
+    .navbar:hover a
+    {
+      background-color:black;
     }
     .nav-item:hover
     {
-      background-color:#4CAF50;
+      background-color:black;
+    }
+    .nav-item:hover a
+    {
+      background-color:black;
+      color:blue;
     }
   	</style>
 

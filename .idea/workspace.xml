@@ -4,7 +4,6 @@
     <list default="true" id="e6d01e7b-0b22-425c-ac2c-5eec74c25ad4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/Result.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/Result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,15 +48,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="4498" />
+          <entry key="html" value="4873" />
           <entry key="py" value="6" />
-          <entry key="txt" value="242" />
+          <entry key="txt" value="291" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4498" />
-          <entry key="PLAIN_TEXT" value="242" />
+          <entry key="HTML" value="4873" />
+          <entry key="PLAIN_TEXT" value="291" />
           <entry key="Python" value="6" />
         </counts>
       </usages-collector>
@@ -68,10 +67,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="291" column="36" lean-forward="true" selection-start-line="291" selection-start-column="36" selection-end-line="291" selection-end-column="36" />
+            <state relative-caret-position="175">
+              <caret line="408" column="32" lean-forward="true" selection-start-line="408" selection-start-column="32" selection-end-line="408" selection-end-column="32" />
               <folding>
-                <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#5;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -305,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543630788356</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed Results page, made question box bigger">
+      <created>1543942718105</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543942718105</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -385,7 +390,8 @@
     <MESSAGE value="Age Selection page again" />
     <MESSAGE value="changed about us and contacts page" />
     <MESSAGE value="centered &quot;Question&quot; on quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="centered &quot;Question&quot; on quiz" />
+    <MESSAGE value="fixed Results page, made question box bigger" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed Results page, made question box bigger" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/QuizWebsite/QuizWebsite/urls.py">
@@ -526,10 +532,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="291" column="36" lean-forward="true" selection-start-line="291" selection-start-column="36" selection-end-line="291" selection-end-column="36" />
+        <state relative-caret-position="175">
+          <caret line="408" column="32" lean-forward="true" selection-start-line="408" selection-start-column="32" selection-end-line="408" selection-end-column="32" />
           <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#5;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />

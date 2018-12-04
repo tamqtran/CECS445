@@ -9,7 +9,7 @@
 
 	{% block body %}
   <body>
-		<h1 align="center" style=color:white> <b>Question</b> </h1>
+		<h1 id=questionHeader> <b>Question</b> </h1>
         <p>
                 <!--Show Problem-->
                 <button id = "problem"
@@ -99,6 +99,7 @@
             var current = count + 1;
             element.innerHTML = current + " / " + max;
             element.style.color = "white";
+            element.style.position =
             RandomPos();
 
 
@@ -395,6 +396,25 @@
     		    color: #0700F9;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
+            #right{
+                position:absolute;
+                top:19.4%;
+                left:85%;
+                font-size: 30px
+            }
+            #progress{
+                position:absolute;
+                top:19.4%;
+                left:54%;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            #questionHeader{
+                position:absolute;
+                top:16%;
+                left:41%;
+                color:white;
+            }
         </style>
 
         <audio id="wrongSound" src = "{% static "QuizWebsite/Wrong-answer-sound-effect.mp3" %}" preload="auto" >

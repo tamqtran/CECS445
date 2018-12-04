@@ -83,9 +83,8 @@
 
             /// counter for answer that are right
             var right = 0;
-            document.getElementById("right").innerHTML = "Answers Right: "+ right;
+            document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
             document.getElementById("done").value = right;
-
             // boolean to keep track for first choice for each question
             var firstPick = true;
 
@@ -99,7 +98,7 @@
             var element = document.getElementById("progress");
             var current = count + 1;
             element.innerHTML = current + " / " + max;
-
+            element.style.color = "white";
             RandomPos();
 
 
@@ -169,9 +168,8 @@
 
                     // increase right answers
                     right = right + 1;
-                    document.getElementById("right").innerHTML = "Answers Right: "+ right;
+                    document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
                     document.getElementById("done").value = right;
-
                     // turn firstPickOff off
                     firstPick = false;
                 }

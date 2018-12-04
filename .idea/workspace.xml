@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6d01e7b-0b22-425c-ac2c-5eec74c25ad4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/About.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/HowToPlay.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/HowToPlay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,14 +47,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3349" />
+          <entry key="html" value="3889" />
           <entry key="py" value="6" />
           <entry key="txt" value="242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3349" />
+          <entry key="HTML" value="3889" />
           <entry key="PLAIN_TEXT" value="242" />
           <entry key="Python" value="6" />
         </counts>
@@ -65,25 +63,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="241" column="29" selection-start-line="241" selection-start-column="29" selection-end-line="241" selection-end-column="29" />
+            <state relative-caret-position="248">
+              <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#5;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/HowToPlay.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -94,6 +87,7 @@
     <findStrings>
       <find>choice</find>
       <find>questionpos</find>
+      <find>white</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,10 +104,10 @@
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/MiddleCategories.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/HighCategories.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/AdultCategories.html" />
-        <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/base.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/About.html" />
         <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/HowToPlay.html" />
+        <option value="$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html" />
       </list>
     </option>
   </component>
@@ -514,12 +508,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/QuizWebsite/quiz/Templates/QuizGame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="241" column="29" selection-start-line="241" selection-start-column="29" selection-end-line="241" selection-end-column="29" />
+        <state relative-caret-position="248">
+          <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#5;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -11,26 +11,68 @@
 	{% block body %}
      <body>
 
-		<h1> <b>Result</b> </h1>
-        <h2> <b>Results: {{  results  }}</b> </h2>
+		<h1 align="center" style=color:white> <b>Result</b> </h1>
+        <h2 align="center" style=color:white> <b>You answered: {{  results  }} out of 10 questions correctly!</b> </h2>
 
 
-        <p>
+        <font face = "Comic sans MS" size ="20"><p id = message align="center" style="color:white">
         {% if results >= 7 %}
-            Winner!
+             Winner!
         {% elif results < 7 %}
             Loser!
         {% endif %}
-        <p>
-            <form method="get" action="{% url 'quiz:AgeSelection' %}">
-				<button type="submit" >Play Again?</button>
-			</form>
-			
-			<form method="get" action="{% url 'quiz:index' %}">
-				<button type="submit" >Return to Home</button>
-			</form>
-        </p>
+        </p></font>
+
+        <form method="get" action="{% url 'quiz:AgeSelection' %}">
+            <font face = "Comic sans MS" size ="5"><button type="submit" id = playAgain>Play Again?</button>
+        </form>
+
+        <form method="get" action="{% url 'quiz:index' %}">
+            <font face = "Comic sans MS" size ="5"><button type="submit" id = return>Return to Home</button>
+        </form>
+
 	</body>
+    <style>
+        #playAgain{
+            height:10%;
+            width:30%;
+            position: absolute;
+            top: 55%;
+            left: 35%;
+            border-radius: 12px;
+            background-color: white;
+            border: 2px solid #f98100;
+            color: black;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+			}
+        #playAgain:hover {
+    		background-color: #f98100;
+    		color: black;
+            border: 2px solid white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+        #return{
+            height:10%;
+            width:30%;
+            position: absolute;
+            top: 70%;
+            left: 35%;
+            border-radius: 12px;
+            background-color: white;
+            border: 2px solid #f98100;
+            color: black;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+			}
+        #return:hover {
+    		background-color: #f98100;
+    		color: black;
+            border: 2px solid white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+
+    </style>
     {% endblock %}
 
         <audio id="winSound" src = "{% static "QuizWebsite/Fanfare-sound.mp3" %}" preload="auto" >
@@ -48,4 +90,6 @@
                 document.getElementById("loseSound").play();
         }
     </script>
+
+
 </html>

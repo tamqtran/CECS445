@@ -19,26 +19,22 @@
 
                 <!--Show choice 1-->
 		        <button onclick ="choice1()"
-                        id = "choice1"
-                        class = "choicePos1">
+                        id = "choice1">
                 </button>
 
                 <!--Show choice 2-->
                 <button onclick ="choice2()"
-                        id = "choice2"
-                        class = "choicePos2">
+                        id = "choice2">
                 </button>
 
                 <!--Show choice 3-->
                 <button onclick ="choice3()"
-                        id = "choice3"
-                        class = "choicePos3">
+                        id = "choice3">
                 </button>
 
                 <!--Show answer-->
                 <button onclick ="answer()"
-                        id = "answer"
-                        class = "choicePos4">
+                        id = "answer">
                 </button>
 
                 <!--Next button hidden until an choice is chosen, updates html for next question-->
@@ -72,6 +68,9 @@
 					 <p id="right"></p>
 			 		</footer>
         </p>
+
+
+
         <script>
             // change queryset to JSON
             var x = JSON.parse("{{ question_json| safe | escapejs}}");
@@ -108,8 +107,9 @@
             function choice1() {
                 if(firstPick == true) {
                     document.getElementById("wrongSound").play();
-                    document.getElementById("choice1").innerHTML = "No";
-                    document.getElementById("choice1").style.backgroundColor = "rgb(255,0,0)";
+
+                    document.getElementById("choice1").classList.add("wrong");
+
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -124,8 +124,10 @@
             function choice2() {
                 if(firstPick == true) {
                     document.getElementById("wrongSound").play();
-                    document.getElementById("choice2").innerHTML = "No";
-                    document.getElementById("choice2").style.backgroundColor = "rgb(255,0,0)";
+
+                    document.getElementById("choice2").classList.add("wrong");
+
+                    //document.getElementById("choice2").class = "wrong";
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -140,8 +142,9 @@
             function choice3() {
                 if(firstPick == true) {
                     document.getElementById("wrongSound").play();
-                    document.getElementById("choice3").innerHTML = "No";
-                    document.getElementById("choice3").style.backgroundColor = "rgb(255,0,0)";
+
+                    document.getElementById("choice3").classList.add("wrong");
+
                     if (count >= 9)
                         document.getElementById("done").style.display = "block";
                     else
@@ -156,8 +159,9 @@
             function answer() {
                 if(firstPick == true){
                     document.getElementById("rightSound").play();
-                    document.getElementById("answer").innerHTML = "Yes";
-                    document.getElementById("answer").style.backgroundColor = "rgb(50,205,50)";
+
+                    document.getElementById("answer").classList.add("right");
+
                     if(count >= 9)
                          document.getElementById("done").style.display = "block";
                     else
@@ -192,9 +196,10 @@
                  document.getElementById("choice3").innerHTML = x[count].fields.choice3;
                  document.getElementById("answer").innerHTML = x[count].fields.answer;
                  document.getElementById("next").style.display = "none";
-								 var element = document.getElementById("progress");
-								 var current = count + 1;
-		 						 element.innerHTML = current + " / " + max;
+
+                 var element = document.getElementById("progress");
+                 var current = count + 1;
+                 element.innerHTML = current + " / " + max;
                 RandomPos();
 
                 // turn first choice back on
@@ -214,7 +219,6 @@
 
             // assigning position of choice in the ForEach of RandomPos function
             function assignPos(value, index, array) {
-                document.getElementById(value).style.backgroundColor = "rgb(211,211,211)";
 
                 switch (index) {
                     case 0:
@@ -230,24 +234,56 @@
                         document.getElementById( value ).className = "choicePos4";
                         break;
                     default:
-                        document.getElementById( ""+value ).className = "choicePos4";;
+                        document.getElementById( ""+value ).className = "choicePos4";
                 }
             }
-
 
             function getRight(){
                 return right;
             }
         </script>
 
-        <audio id="wrongSound" src = "{% static "QuizWebsite/Wrong-answer-sound-effect.mp3" %}" preload="auto" >
-        </audio>
-
-        <audio id="rightSound" src = "{% static "QuizWebsite/Quiz-correct-win-victory-sound-effect.mp3" %}" preload="auto" ></audioid>
-        </audio>
-
         <style>
-            .questionPos{
+            .neutral{
+                background-color:  #0700F9;
+                color: white;
+            }
+            .neutral:hover {
+    		    background-color: white;
+                color: #0700F9;
+			}
+            .wrong{
+                position: static;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                border: 2px solid;
+                border-radius: 12px;
+                background-color:  rgb(255,0,0) !important;
+                color: white;
+            }
+            .wrong:hover {
+    		    background-color: white !important;
+    		    color: rgb(255,0,0) !important;
+                transition-duration: 0.4s;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+            .right{
+                position:  static;
+                width: 20%;
+                height: 10%;
+                border: 2px solid;
+                border-radius: 12px;
+                background-color:  rgb(50,205,50) !important;
+                color: white;
+            }
+            .right:hover {
+    		    background-color: white !important;
+    		    color: rgb(50,205,50) !important;
+                transition-duration: 0.4s;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+            .questionPos {
                 position: fixed;
                 top: 35%;
                 left: 40%;
@@ -256,9 +292,15 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
+                background-color: #0700F9;
                 color: white;
             }
+            .questionPos:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
             .choicePos1 {
                 position: fixed;
                 top: 50%;
@@ -270,7 +312,14 @@
                 border-radius: 12px;
                 background-color:  #0700F9;
                 color: white;
+                /*transition-duration: 0.4s;*/
             }
+            .choicePos1:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
             .choicePos2 {
                 position: fixed;
                 top: 50%;
@@ -282,7 +331,14 @@
                 border-radius: 12px;
                 background-color:  #0700F9;
                 color: white;
+                /*transition-duration: 0.4s;*/
             }
+            .choicePos2:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
             .choicePos3 {
                 position: fixed;
                 top: 65%;
@@ -294,7 +350,14 @@
                 border-radius: 12px;
                 background-color:  #0700F9;
                 color: white;
+                /*transition-duration: 0.4s;*/
             }
+            .choicePos3:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
             .choicePos4 {
                 position: fixed;
                 top: 65%;
@@ -306,7 +369,15 @@
                 border-radius: 12px;
                 background-color:  #0700F9;
                 color: white;
+
+                /*transition-duration: 0.4s;*/
             }
+            .choicePos4:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
             .NextDone{
                 position: fixed;
                 top: 85%;
@@ -318,8 +389,22 @@
                 border-radius: 12px;
                 background-color:  #0700F9;
                 color: white;
+                /*transition-duration: 0.4s;*/
             }
+            .NextDone:hover {
+                transition-duration: 0.4s;
+    		    background-color: white;
+    		    color: #0700F9;
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			}
         </style>
+
+        <audio id="wrongSound" src = "{% static "QuizWebsite/Wrong-answer-sound-effect.mp3" %}" preload="auto" >
+        </audio>
+
+        <audio id="rightSound" src = "{% static "QuizWebsite/Quiz-correct-win-victory-sound-effect.mp3" %}" preload="auto" ></audioid>
+        </audio>
+
 
 	</body>
     {% endblock %}

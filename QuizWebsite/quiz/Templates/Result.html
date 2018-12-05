@@ -10,29 +10,48 @@
 
 	{% block body %}
      <body>
+        <div id = "resultsPage">
 
-		<h1 align="center" style=color:white> <b>Result</b> </h1>
-        <h2 align="center" style=color:white> <b>You answered: {{  results  }} out of 10 questions correctly!</b> </h2>
+            <h1 align="center" style=color:white >Result </h1>
 
+            <br/>
+            <p id = message align="center" style="color:white">
+            {% if results >= 7 %}
+                Congrats! You got a passing grade. <br/>
+            {% elif results < 7 %}
+                Sorry, you did not get a passing grade. <br/>
+            {% endif %}
+            <br/>
+            You answered: {{  results  }} out of 10 questions correctly.
+            </p>
 
-        <font face = "Comic sans MS" size ="20"><p id = message align="center" style="color:white">
-        {% if results >= 7 %}
-             Winner!
-        {% elif results < 7 %}
-            Loser!
-        {% endif %}
-        </p></font>
+            <form method="get" action="{% url 'quiz:AgeSelection' %}">
+                <font face = "Comic sans MS" size ="5"><button type="submit" id = playAgain>Play Again?</button>
+            </form>
 
-        <form method="get" action="{% url 'quiz:AgeSelection' %}">
-            <font face = "Comic sans MS" size ="5"><button type="submit" id = playAgain>Play Again?</button>
-        </form>
-
-        <form method="get" action="{% url 'quiz:index' %}">
-            <font face = "Comic sans MS" size ="5"><button type="submit" id = return>Return to Home</button>
-        </form>
-
+            <form method="get" action="{% url 'quiz:index' %}">
+                <font face = "Comic sans MS" size ="5"><button type="submit" id = return>Return to Home</button>
+            </form>
+        </div>
 	</body>
     <style>
+        h1{
+            font-family: "Comic Sans MS";
+            font-size: 500%;
+        }
+        p{
+            font-family: "Comic Sans MS";
+            font-size: 250%;
+        }
+        #resultsPage{
+            height: 650px;
+            width: 1000px;
+		    margin: 0 auto;
+		    border-radius: 50px;
+            background-color: #0700f9;
+		    border: 2px solid #cbcbcb;
+            padding: 20px;
+        }
         #playAgain{
             height:10%;
             width:30%;

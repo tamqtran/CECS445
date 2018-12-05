@@ -9,7 +9,8 @@
 
 	{% block body %}
   <body>
-		<h1 id=questionHeader> <b>Question</b> </h1>
+  <div id="game">
+		<h1 id=questionHeader> Question</b> </h1>
         <p>
                 <!--Show Problem-->
                 <button id = "problem"
@@ -55,35 +56,31 @@
                             style="display:none"
                             class = "NextDone"
                             name = "results"
-                            value = '0'>
+                            value = '0'
+                            >
                         Done
                     </button>
 			    </form>
 
-					<footer>
-					 <p id="progress"></p>
-			 		</footer>
 
-                    <footer>
-					 <p id="right"></p>
-			 		</footer>
         </p>
-
-
+        </div>
+    </body>
 
         <script>
             // change queryset to JSON
             var x = JSON.parse("{{ question_json| safe | escapejs}}");
 
-						//Current Question
-						max = 10;
+            //Current Question
+            max = 10;
 
             // counter for which question
             var count = 0;
 
             /// counter for answer that are right
             var right = 0;
-            document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
+
+            //document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
             document.getElementById("done").value = right;
             // boolean to keep track for first choice for each question
             var firstPick = true;
@@ -95,11 +92,11 @@
             document.getElementById("choice3").innerHTML = x[count].fields.choice3;
             document.getElementById("answer").innerHTML = x[count].fields.answer;
 
-            var element = document.getElementById("progress");
+
             var current = count + 1;
-            element.innerHTML = current + " / " + max;
-            element.style.color = "white";
-            element.style.position =
+
+            //document.getElementById("questionHeader").innerHTML = "#" + current +" Question";
+            document.getElementById("questionHeader").innerHTML = "#" + current + " Question";
             RandomPos();
 
 
@@ -169,7 +166,7 @@
 
                     // increase right answers
                     right = right + 1;
-                    document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
+                    //document.getElementById("right").innerHTML = "<span style='color:white;'> Answers Right: </span>" + "<span style=\"color:white\">"+ right + "</span>";
                     document.getElementById("done").value = right;
                     // turn firstPickOff off
                     firstPick = false;
@@ -196,9 +193,9 @@
                  document.getElementById("answer").innerHTML = x[count].fields.answer;
                  document.getElementById("next").style.display = "none";
 
-                 var element = document.getElementById("progress");
-                 var current = count + 1;
-                 element.innerHTML = current + " / " + max;
+                 current = count + 1;
+                 document.getElementById("questionHeader").innerHTML = "#" + current + " Question";
+
                 RandomPos();
 
                 // turn first choice back on
@@ -243,13 +240,37 @@
         </script>
 
         <style>
+            #game{
+                height: 700px;
+                width: 1000px;
+                margin: 0 auto;
+                border-radius: 50px;
+                background-color: #0700f9;
+                border: 2px solid #cbcbcb;
+                padding: 20px;
+            }
+            h1{
+                font-size: 400%;
+                line-height: 100px;
+                font-family: "Comic Sans MS";
+                text-align: center;
+                color:white;
+            }
+            p{
+                font-family: "Comic Sans MS";
+                font-size: 200%;
+            }
+            form{
+                font-family: "Comic Sans MS";
+                font-size: 200%;
+            }
             .neutral{
-                background-color:  #0700F9;
-                color: white;
+                background-color: white;
+                color: black;
             }
             .neutral:hover {
-    		    background-color: white;
-                color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 			}
             .wrong{
                 position: static;
@@ -259,7 +280,7 @@
                 border: 2px solid;
                 border-radius: 12px;
                 background-color:  rgb(255,0,0) !important;
-                color: white;
+                color: white !important;
             }
             .wrong:hover {
     		    background-color: white !important;
@@ -274,7 +295,7 @@
                 border: 2px solid;
                 border-radius: 12px;
                 background-color:  rgb(50,205,50) !important;
-                color: white;
+                color: white !important;
             }
             .right:hover {
     		    background-color: white !important;
@@ -291,15 +312,9 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color: #0700F9;
-                color: white;
+                background-color: white;
+                color: black;
             }
-            .questionPos:hover {
-                transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
-				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-			}
             .choicePos1 {
                 position: fixed;
                 top: 50%;
@@ -309,14 +324,13 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
-                color: white;
-                /*transition-duration: 0.4s;*/
+                background-color: white;
+                color: black;
             }
             .choicePos1:hover {
                 transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
             .choicePos2 {
@@ -328,14 +342,13 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
-                color: white;
-                /*transition-duration: 0.4s;*/
+                background-color: white;
+                color: black;
             }
             .choicePos2:hover {
                 transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
             .choicePos3 {
@@ -347,14 +360,13 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
-                color: white;
-                /*transition-duration: 0.4s;*/
+                background-color: white;
+                color: black;
             }
             .choicePos3:hover {
                 transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
             .choicePos4 {
@@ -366,55 +378,35 @@
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
-                color: white;
-
-                /*transition-duration: 0.4s;*/
+                background-color: white;
+                color: black;
             }
             .choicePos4:hover {
                 transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
             .NextDone{
                 position: fixed;
-                top: 85%;
-                left: 75%;
+                top: 80%;
+                left: 40%;
                 width: 20%;
                 height: 10%;
                 text-align: center;
                 border: 2px solid;
                 border-radius: 12px;
-                background-color:  #0700F9;
-                color: white;
-                /*transition-duration: 0.4s;*/
+                background-color: white;
+                color: black;
+                font-family: "Comic Sans MS";
+                font-size: 100%;
             }
             .NextDone:hover {
                 transition-duration: 0.4s;
-    		    background-color: white;
-    		    color: #0700F9;
+    		    background-color: #f98100;
+    		    color: white;
 				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
-            #right{
-                position:absolute;
-                top:19.4%;
-                left:85%;
-                font-size: 30px
-            }
-            #progress{
-                position:absolute;
-                top:19.4%;
-                left:54%;
-                font-size: 30px;
-                font-weight: bold;
-            }
-            #questionHeader{
-                position:absolute;
-                top:16%;
-                left:41%;
-                color:white;
-            }
         </style>
 
         <audio id="wrongSound" src = "{% static "QuizWebsite/Wrong-answer-sound-effect.mp3" %}" preload="auto" >
@@ -424,7 +416,7 @@
         </audio>
 
 
-	</body>
+
     {% endblock %}
 
 
